@@ -27,18 +27,17 @@ export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isModalOpen, setIsModalOpen } = useMyContext();
   return (
-    <header>
-      <Box pos="fixed" align="center" w="100vw" bg="gray.100">
+    
+      <Box pos="absolute" align="center" w="100vw">
         <Flex
           p="1rem"
           w="full"
           align="center"
           maxW={1200}
-          bg="gray.50"
           justify="space-between"
         >
           <LogoSvg />
-          <HStack display={{ base: "none", sm: "flex" }} spacing={10}>
+          <HStack fontSize="14px" color="white" fontWeight="700" display={{ base: "none", sm: "flex" }} spacing={10}>
             <Menu />
           </HStack>
           <IconButton onClick={onOpen} display={{ base: "flex", sm: "none" }}>
@@ -63,20 +62,24 @@ export function Header() {
           </DrawerContent>
         </Drawer>
       </Box>
-    </header>
+    
   );
 }
 
 const Menu = () => (
   <>
     <Text as="a" href="#">
-      Link1
+      Vantagens
     </Text>
     <Text as="a" href="#">
-      Link2
+      Como funciona
     </Text>
-    <Text onClick={() => setIsModalOpen(!isModalOpen)} as="a" href="#">
-      Link3
+    <Text as="a" href="#">
+      Planos
     </Text>
+    <Text as="a" href="#">
+      Fale conosco
+    </Text>
+    
   </>
 );

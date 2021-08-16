@@ -8,7 +8,10 @@ export const theme = extendTheme({
     body: "CaviarDreams",
   },
   colors: {
-    rosaxoq: "#ff00ff",
+    laranja: "#F35822",
+    amarelo: "#FA9D1C",
+    bordo: "#5C1331",
+    texto: "#6F5551",
   },
   components: {
     Button: {

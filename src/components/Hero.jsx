@@ -6,19 +6,22 @@ import { useMyContext } from "../contexts/Context";
 export function Hero() {
   const { isModalOpen } = useMyContext();
   return (
-    <Box align="center" w="100vw" bg={isModalOpen ? "blue.100" : "blue.200"}>
-      <Flex pt={100} 
+    <Box
+      h="90vh"
+      minH={400}
+      maxH={900}
+      bg="url(/banner1.jpg) center center"
+      bgSize="cover"
+    >
+      <Flex
+        pt={100}
         px="1rem"
         align="center"
         maxW={1200}
-        bg="blue.50"
         justify="space-between"
-        h={700}
+        maxH={900}
         flexDir={{ base: "column", sm: "row" }}
-      >
-        <Heading>Texto</Heading>
-        <Heading>Texto</Heading>
-      </Flex>
+      ></Flex>
     </Box>
   );
 }
