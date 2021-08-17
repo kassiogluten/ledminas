@@ -21,7 +21,7 @@ import {
 
 export function Video() {
   return (
-    <Box align="center" w="100vw" bg="white">
+    <Box align="center" w="100%" bg="white">
       <Flex
         p="1rem 1rem 7rem"
         align="center"

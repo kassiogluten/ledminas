@@ -12,7 +12,7 @@ import { DurationSvg, LoopSvg, TimeSvg, UpdateSvg } from "../icons";
 
 export function HowWorks() {
   return (
-    <Box align="center" w="100vw" bg="white">
+    <Box align="center" w="100%" bg="white">
       <Flex
         p="7rem 1rem"
         align="center"

@@ -27,7 +27,7 @@ export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isModalOpen, setIsModalOpen } = useMyContext();
   return (
-    <Box pos="absolute" align="center" w="100vw">
+    <Box pos="absolute" align="center" w="100%">
       <Flex
         p="1rem"
         w="full"

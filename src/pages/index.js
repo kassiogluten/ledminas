@@ -12,7 +12,7 @@ import { Video } from "../components/Video";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Led Minas - Marketing Direto</title>
       </Head>
@@ -25,6 +25,6 @@ export default function Home() {
       <Plans />
       <Support />
       <Footer />
-    </div>
+    </>
   );
 }

@@ -12,7 +12,7 @@ import React from "react";
 
 export function CTA() {
   return (
-    <Box align="center" w="100vw" bg="white">
+    <Box align="center" w="100%" bg="white">
       <Flex
         p="7rem 1rem"
         align="center"
