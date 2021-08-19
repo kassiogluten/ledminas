@@ -27,7 +27,7 @@ export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isModalOpen, setIsModalOpen } = useMyContext();
   return (
-    <Box pos="absolute" align="center" w="100%">
+    <Box bg="linear-gradient(180deg, #00000099 0%, #FA9D1C00 100%)" pos="absolute" align="center" w="100%">
       <Flex
         p="1rem"
         w="full"

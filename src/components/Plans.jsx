@@ -73,42 +73,46 @@ export function Plans({ onOpen }) {
   );
 }
 
-const Card = ({ title, subtitle, value, saveup, desc2 }) => (
-  <VStack w={270} h={360} p="30px" my={5} bg="white" borderRadius={5}>
-    <Heading
-      lineHeight="100%"
-      textTransform="uppercase"
-      fontSize={30}
-      color="laranja"
-    >
-      {title}
-    </Heading>
-    <Text
-      pb={5}
-      fontSize="14px"
-      lineHeight="100%"
-      w="full"
-      borderBottomWidth={2}
-      borderColor="gray.100"
-    >
-      {subtitle}
-    </Text>
-    <Heading fontSize={36} color="laranja" py={5}>
-      {value}
-    </Heading>
-    <Spacer />
-    <Text pb={5} fontSize="14px">
-      {saveup}
-    </Text>
-    <Button
-      onClick={() => alert("Em construção")}
-      colorScheme="blackAlpha"
-      color="white"
-      p="25px 50px"
-      bg="amarelo"
-      fontSize="0.8rem"
-    >
-      Quero esse
-    </Button>
-  </VStack>
-);
+function Card({ title, subtitle, value, saveup, desc2 }) {
+  const {selectedCity} = useMyContext()
+  return (
+    <VStack w={270} h={360} p="30px" my={5} bg="white" borderRadius={5}>
+      <Heading
+        lineHeight="100%"
+        textTransform="uppercase"
+        fontSize={30}
+        color="laranja"
+      >
+        {title}
+      </Heading>
+      <Text
+        pb={5}
+        fontSize="14px"
+        lineHeight="100%"
+        w="full"
+        borderBottomWidth={2}
+        borderColor="gray.100"
+      >
+        {subtitle}
+      </Text>
+      <Heading fontSize={36} color="laranja" py={5}>
+        {value}
+      </Heading>
+      <Spacer />
+      <Text pb={5} fontSize="14px">
+        {saveup}
+      </Text>
+      <Button
+        as="a"
+        href={`https://api.whatsapp.com/send?phone=5533998169889&text=Gostaria%20de%20contratar%20o%20plano%20${title}%20de%20${selectedCity}`}
+        colorScheme="blackAlpha"
+        color="white"
+        p="25px 50px"
+        bg="amarelo"
+        fontSize="0.8rem"
+      >
+        Quero esse
+      </Button>
+    </VStack>
+  );
+}

@@ -4,13 +4,13 @@ import React from "react";
 import { useMyContext } from "../contexts/Context";
 
 export function Hero() {
-  const { isModalOpen } = useMyContext();
+  const { selectedCity } = useMyContext();
   return (
     <Box
       h="90vh"
       minH={400}
       maxH={900}
-      bg="url(/banner1.jpg) center center"
+      bg={`url(/banner${selectedCity === 'Caratinga' ? '1' : '2'}.jpg) center center`}
       bgSize="cover"
     >
       <Flex
