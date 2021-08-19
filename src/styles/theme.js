@@ -12,6 +12,7 @@ export const theme = extendTheme({
     amarelo: "#FA9D1C",
     bordo: "#5C1331",
     texto: "#6F5551",
+    cinza: "#F9F8F8",
   },
   components: {
     Button: {

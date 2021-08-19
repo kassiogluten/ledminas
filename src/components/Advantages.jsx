@@ -1,9 +1,11 @@
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
 import React from "react";
+import { useMyContext } from "../contexts/Context";
 import { CoinSvg, EyeSvg, ScreenSvg } from "../icons";
 
 export function Advantages() {
+  const { selectedCity } = useMyContext();
   return (
     <Box
       align="center"
@@ -36,7 +38,7 @@ export function Advantages() {
         <Card
           icon={<ScreenSvg />}
           title="Localização privilegiada"
-          desc1="O painel está localizado na Praça Cesário Alvim, nº 80, no Center Posto (antigo posto Esso). "
+          desc1={`O painel está localizado na ${selectedCity === "Caratinga" ? "Praça Cesário Alvim, nº 80, no Center Posto (antigo posto Esso)." : "Praça Israel Nunes"} `}
           desc2="Um local com tráfego intenso durante todo o dia."
         />
       </Flex>

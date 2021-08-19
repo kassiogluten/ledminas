@@ -58,9 +58,16 @@ export function Support() {
               target="_blank"
               as="a"
               href="https://goo.gl/maps/bv7YGcHKVyFYoNaH8"
-              pb={30}
             >
               Praça Cesário Alvim nº 80, Caratinga
+            </Text>
+            <Text
+              target="_blank"
+              as="a"
+              href="https://goo.gl/maps/LRadog8oiivBXQzP6"
+              pb={30}
+            >
+              Praça Israel Nunes, Vargem Alegre
             </Text>
             <Button
               onClick={() => alert("Em construção")}

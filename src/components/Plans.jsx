@@ -10,8 +10,10 @@ import {
 } from "@chakra-ui/react";
 
 import React from "react";
+import { useMyContext } from "../contexts/Context";
 
-export function Plans() {
+export function Plans({ onOpen }) {
+  const { selectedCity } = useMyContext();
   return (
     <Box
       align="center"
@@ -21,34 +23,49 @@ export function Plans() {
     >
       <Flex px="1rem" maxW={1200} flexDir="column" py="80px">
         <VStack>
-          <Text fontSize="36px" color="white">
-            Conheça nossos planos para <strong>Caratinga</strong>
+          <Text
+            _hover={{ cursor: "pointer" }}
+            onClick={onOpen}
+            fontSize="36px"
+            color="white"
+          >
+            Conheça nossos planos para <strong>{selectedCity}</strong>
             <ChevronDownIcon />
           </Text>
 
           <Box w={65} h="4px" bg="amarelo" />
         </VStack>
         <Flex py="80px" flexWrap="wrap" justifyContent="space-evenly">
-          <Card title="MENSAL" subtitle="Pagamento único" value="R$ 599,90" />
+          <Card
+            title="MENSAL"
+            subtitle="Pagamento único"
+            value={selectedCity === "Caratinga" ? "R$ 599,90" : "R$ 349,90"}
+          />
 
           <Card
             title="TRIMESTRAL "
             subtitle="Pagamento mensal por 3 meses "
-            value="R$ 499,90"
-            saveup="Economize R$ 300,00 em relação ao mensal"
+            value={selectedCity === "Caratinga" ? "R$ 499,90" : "R$ 299,90"}
+            saveup={`Economize R$ ${
+              selectedCity === "Caratinga" ? "300,00" : "150,00"
+            } em relação ao mensal`}
           />
 
           <Card
             title="SEMESTRAL"
             subtitle="Pagamento mensal por 6 meses "
-            value="R$ 449,90"
-            saveup="Economize R$ 900,00 em relação ao mensal"
+            value={selectedCity === "Caratinga" ? "R$ 449,90" : "R$ 249,90"}
+            saveup={`Economize R$ ${
+              selectedCity === "Caratinga" ? "900,00" : "600,00"
+            } em relação ao mensal`}
           />
           <Card
             title="ANUAL"
             subtitle="Pagamento mensal por 12 meses "
-            value="R$ 399,90"
-            saveup="Economize R$ 3000,00 em relação ao mensal"
+            value={selectedCity === "Caratinga" ? "R$ 399,90" : "R$ 199,90"}
+            saveup={`Economize R$ ${
+              selectedCity === "Caratinga" ? "2400,00" : "1800,00"
+            } em relação ao mensal`}
           />
         </Flex>
       </Flex>
@@ -83,7 +100,8 @@ const Card = ({ title, subtitle, value, saveup, desc2 }) => (
     <Text pb={5} fontSize="14px">
       {saveup}
     </Text>
-    <Button onClick={()=> alert('Em construção')}
+    <Button
+      onClick={() => alert("Em construção")}
       colorScheme="blackAlpha"
       color="white"
       p="25px 50px"
