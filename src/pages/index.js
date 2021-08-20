@@ -44,7 +44,7 @@ export default function Home() {
       <Head>
         <title>Led Minas - Marketing Direto</title>
       </Head>
-      <Header />
+      <Header onCityOpen={onOpen} />
       <Hero />
       <Advantages />
       <CTA />

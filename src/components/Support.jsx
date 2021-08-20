@@ -1,5 +1,4 @@
 import {
-  Alert,
   Box,
   Button,
   Flex,
@@ -7,12 +6,15 @@ import {
   Image,
   Text,
   VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 import React from "react";
 import { EmailSvg, PhoneSvg, PinSvg, ZapSvg } from "../icons";
+import { Form } from "./Form";
 
 export function Support() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box align="center" w="100%" bg="white" id="fale-conosco">
       <Flex p="7rem 1rem" align="center" maxW={1200} flexDir="column">
@@ -70,7 +72,7 @@ export function Support() {
               Praça Israel Nunes, Vargem Alegre
             </Text>
             <Button
-              onClick={() => alert("Em construção")}
+              onClick={onOpen}
               colorScheme="blackAlpha"
               color="white"
               p="30px 50px"
@@ -85,6 +87,7 @@ export function Support() {
           </Box>
         </Flex>
       </Flex>
+      <Form isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
     </Box>
   );
 }

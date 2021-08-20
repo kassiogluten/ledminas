@@ -1,7 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
-  initialColorMode: "dark",
   useSystemColorMode: false,
   fonts: {
     heading: "CaviarDreams",
@@ -20,6 +19,15 @@ export const theme = extendTheme({
         _hover: {
           //textDecoration: "underline",
         },
+      },
+    },
+    FormLabel: {
+      baseStyle: {
+        fontSize: 14,
+        color: "texto",
+        fontWeight: 700,
+        pt: 4,
+        lineHeight: 4,
       },
     },
   },
