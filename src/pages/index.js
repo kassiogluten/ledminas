@@ -55,11 +55,11 @@ export default function Home() {
       <Footer />
       <Modal size="xl" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent p="40px">
+        <ModalContent p="30px">
           <ModalCloseButton
             size={14}
             boxSize={10}
-            m={7}
+            m={3}
             color="laranja"
             bg="cinza"
           />
@@ -67,8 +67,8 @@ export default function Home() {
             <Heading
               fontSize={24}
               borderLeftWidth={5}
-              ml="-64px"
-              pl="40px"
+              ml="-54px"
+              pl="30px"
               borderColor="laranja"
               color="texto"
               fontWeight={400}

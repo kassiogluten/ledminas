@@ -24,7 +24,7 @@ import { useMyContext } from "../contexts/Context";
 
 //import { useMyContext } from "../contexts/Context";
 
-export function Header({onCityOpen}) {
+export function Header({ onCityOpen }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box
@@ -48,19 +48,18 @@ export function Header({onCityOpen}) {
           display={{ base: "none", sm: "flex" }}
           spacing={10}
         >
-          <Menu onCityOpen={onCityOpen}/>
+          <Menu onCityOpen={onCityOpen} />
         </HStack>
         <IconButton onClick={onOpen} display={{ base: "flex", sm: "none" }}>
           <FiMenu />
         </IconButton>
       </Flex>
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer returnFocusOnClose={false} isOpen={isOpen} placement="right">
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerBody pt={50}>
+        <DrawerContent >
+          <DrawerBody onDrag={onClose} onClick={onClose} pt={50}>
             <VStack spacing={10}>
-              <Menu />
+              <Menu onCityOpen={onCityOpen} />
             </VStack>
           </DrawerBody>
         </DrawerContent>
@@ -69,8 +68,8 @@ export function Header({onCityOpen}) {
   );
 }
 
-function Menu({onCityOpen}) {
-  const {selectedCity} = useMyContext();
+function Menu({ onCityOpen }) {
+  const { selectedCity } = useMyContext();
   return (
     <>
       <Text as="a" href="#vantagens">
@@ -85,9 +84,7 @@ function Menu({onCityOpen}) {
       <Text as="a" href="#fale-conosco">
         Fale conosco
       </Text>
-      <Text onClick={onCityOpen}>
-        {selectedCity}
-      </Text>
+      <Text onClick={onCityOpen}>{selectedCity}</Text>
     </>
   );
 }
