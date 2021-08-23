@@ -3,6 +3,8 @@ import {
   Box,
   Button,
   Flex,
+  Grid,
+  GridItem,
   Heading,
   Spacer,
   Text,
@@ -39,13 +41,13 @@ export function Plans({ onOpen }) {
           <Card
             title="MENSAL"
             subtitle="Pagamento único"
-            value={selectedCity === "Caratinga" ? "R$ 599,90" : "R$ 349,90"}
+            value={selectedCity === "Caratinga" ? "R$ 599" : "R$ 349"}
           />
 
           <Card
             title="TRIMESTRAL "
             subtitle="Pagamento mensal por 3 meses "
-            value={selectedCity === "Caratinga" ? "R$ 499,90" : "R$ 299,90"}
+            value={selectedCity === "Caratinga" ? "R$ 499" : "R$ 299"}
             saveup={`Economize R$ ${
               selectedCity === "Caratinga" ? "300,00" : "150,00"
             } em relação ao mensal`}
@@ -54,7 +56,7 @@ export function Plans({ onOpen }) {
           <Card
             title="SEMESTRAL"
             subtitle="Pagamento mensal por 6 meses "
-            value={selectedCity === "Caratinga" ? "R$ 449,90" : "R$ 249,90"}
+            value={selectedCity === "Caratinga" ? "R$ 449" : "R$ 249"}
             saveup={`Economize R$ ${
               selectedCity === "Caratinga" ? "900,00" : "600,00"
             } em relação ao mensal`}
@@ -62,7 +64,7 @@ export function Plans({ onOpen }) {
           <Card
             title="ANUAL"
             subtitle="Pagamento mensal por 12 meses "
-            value={selectedCity === "Caratinga" ? "R$ 399,90" : "R$ 199,90"}
+            value={selectedCity === "Caratinga" ? "R$ 399" : "R$ 199"}
             saveup={`Economize R$ ${
               selectedCity === "Caratinga" ? "2400,00" : "1800,00"
             } em relação ao mensal`}
@@ -74,7 +76,7 @@ export function Plans({ onOpen }) {
 }
 
 function Card({ title, subtitle, value, saveup, desc2 }) {
-  const {selectedCity} = useMyContext()
+  const { selectedCity } = useMyContext();
   return (
     <VStack w={270} h={360} p="30px" my={5} bg="white" borderRadius={5}>
       <Heading
@@ -95,9 +97,47 @@ function Card({ title, subtitle, value, saveup, desc2 }) {
       >
         {subtitle}
       </Text>
-      <Heading fontSize={36} color="laranja" py={5}>
-        {value}
-      </Heading>
+
+      <Grid templateRows="repeat(2, 1fr)" templateColumns="2fr 1fr" gap={0}>
+        <GridItem rowSpan={2} colSpan={1}>
+          <Heading fontSize={36} color="laranja" py={5}>
+            {value}
+          </Heading>
+        </GridItem>
+        <GridItem
+          m="0 2px -4px"
+          justifySelf="start"
+          alignSelf="flex-end"
+          rowSpan={1}
+          colSpan={1}
+        >
+          <Heading
+            display="inline"
+            fontWeight={700}
+            fontSize={16}
+            color="laranja"
+          >
+            ,90
+          </Heading>
+        </GridItem>
+        <GridItem
+        m="-4px 2px 0"
+          justifySelf="start"
+          alignSelf="flex-start"
+          rowSpan={1}
+          colSpan={1}
+        >
+          <Heading
+            display="inline"
+            fontWeight={700}
+            fontSize={16}
+            color="laranja"
+          >
+            mês
+          </Heading>
+        </GridItem>
+      </Grid>
+
       <Spacer />
       <Text pb={5} fontSize="14px">
         {saveup}

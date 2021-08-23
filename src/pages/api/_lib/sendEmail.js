@@ -15,7 +15,7 @@ const sendEmail = async ({ messageContent }) => {
         {
           to: [
             {
-              email: "kassiogluten@gmail.com",
+              email: "anuncie@ledminas.com.br",
             },
           ],
           subject: "[SITE] Formulário de contato",
