@@ -144,7 +144,7 @@ function Card({ title, subtitle, value, saveup, desc2 }) {
       </Text>
       <Button
         as="a"
-        href={`https://api.whatsapp.com/send?phone=5533998169889&text=Gostaria%20de%20contratar%20o%20plano%20${title}%20de%20${selectedCity}`}
+        href={`https://api.whatsapp.com/send?phone=553398169889&text=Gostaria%20de%20contratar%20o%20plano%20${title}%20de%20${selectedCity}`}
         colorScheme="blackAlpha"
         color="white"
         p="25px 50px"
