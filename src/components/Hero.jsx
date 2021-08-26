@@ -10,7 +10,7 @@ export function Hero() {
       h="90vh"
       minH={400}
       maxH={900}
-      bg={`url(/banner${selectedCity === 'Caratinga' ? '1' : '2'}.jpg) center center`}
+      bg={`url(/${selectedCity === 'Caratinga' ? 'banner1' : 'Vargem-Alegre'}.jpg) center center`}
       bgSize="cover"
     >
       <Flex

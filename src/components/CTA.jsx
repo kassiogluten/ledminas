@@ -9,8 +9,10 @@ import {
 } from "@chakra-ui/react";
 
 import React from "react";
+import { useMyContext } from "../contexts/Context";
 
 export function CTA() {
+  const { selectedCity } = useMyContext();
   return (
     <Box align="center" w="100%" bg="white">
       <Flex
@@ -40,7 +42,7 @@ export function CTA() {
 
           <Box w={65} h="4px" bg="amarelo" />
           <Text color="texto" maxW={337} py={10}>
-            Somos o único painel de led <strong>Full HD de Caratinga.</strong>{" "}
+            Somos o único painel de led <strong>Full HD de {selectedCity === 'Caratinga' ? 'Caratinga' : 'Vargem Alegre'}.</strong>{" "}
             Anuncie mais de 3.200 vezes por mês com a Led Minas
           </Text>
           <Button as="a" href="#planos"

@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 import React from "react";
+import { useMyContext } from "../contexts/Context";
 import {
   AudioSvg,
   DurationSvg,
@@ -20,6 +21,7 @@ import {
 } from "../icons";
 
 export function Video() {
+  const {selectedCity} = useMyContext()
   return (
     <Box align="center" w="100%" bg="white">
       <Flex
@@ -64,7 +66,7 @@ export function Video() {
               <Card
                 icon={<ResolutionSvg />}
                 title="RESOLUÇÃO"
-                desc1="Para que o vídeo encaixe perfeitamente no telão, ele deve ter a resolução de 430px x 290px. "
+                desc1={`Para que o vídeo encaixe perfeitamente no telão, ele deve ter a resolução de ${selectedCity === "Caratinga" ? "430px x 290px." : "960px x 480px"}.` }
               />
               <Card
                 icon={<AudioSvg />}
